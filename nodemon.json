@@ -1,0 +1,11 @@
+{
+    "restartable": "rs",
+    "execMap": {
+      "js": "npm run clean && npm run build && node"
+    },
+    "watch": ["src/*"],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js,ts,html,css,json"
+}
