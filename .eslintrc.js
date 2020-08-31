@@ -15,6 +15,6 @@ module.exports = {
     ],
     rules: {
         'semi': ['error'],
-        'sort-keys': ["error", "asc", {"caseSensitive": true, "natural": false, "minKeys": 2}]
+        '@typescript-eslint/explicit-function-return-type': 'off'
     }
 };
