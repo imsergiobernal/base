@@ -39,6 +39,7 @@
     "lodash-es": "^4.17.15",
     "mnemonist": "^0.38.0",
     "mongoose": "^5.9.19",
+    "oclif": "^1.16.1",
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
     "rimraf": "^3.0.2",
