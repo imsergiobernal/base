@@ -50,6 +50,7 @@
     "status-code-enum": "^1.0.0",
     "type-fest": "^0.16.0",
     "typed-rest-client": "^1.7.3",
+    "typeorm": "^0.2.25",
     "uuid": "^8.2.0",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0"
