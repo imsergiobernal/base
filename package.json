@@ -38,6 +38,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash-es": "^4.17.15",
     "mnemonist": "^0.38.0",
+    "moment": "^2.29.0",
     "mongoose": "^5.9.19",
     "oclif": "^1.16.1",
     "pg": "^8.2.1",
@@ -53,7 +54,8 @@
     "typeorm": "^0.2.25",
     "uuid": "^8.2.0",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.0"
+    "winston-daily-rotate-file": "^4.5.0",
+    "zod": "^1.11.9"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
