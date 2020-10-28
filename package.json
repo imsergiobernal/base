@@ -17,10 +17,9 @@
   },
   "scripts": {
     "start": "node -r dotenv/config dist/index.js",
-    "dev": "ts-node-dev src/",
-    "dev:watch": "ts-node-dev src/",
+    "dev": "ts-node-dev -r dotenv/config -- src/ --project ./tsconfig.extended.json",
     "dev:inspect": "nodemon -r dotenv/config --inspect dist/index.js",
-    "build": "tsc",
+    "build": "tsc --project ./tsconfig.extended.json",
     "clean": "npx rimraf dist/"
   },
   "bugs": {
@@ -81,6 +80,8 @@
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "nodemon": "^2.0.4",
+    "npm-check": "^5.9.2",
+    "ts-node-dev": "^1.0.0",
     "typescript": "^3.9.6"
   },
   "husky": {
