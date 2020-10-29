@@ -1,15 +1,15 @@
-import winston from 'winston';
-import WinstonFileRotator from 'winston-daily-rotate-file';
+import * as Winston from 'winston';
+import WinstonDailyRotateFile from 'winston-daily-rotate-file';
 
-global.logger = winston.createLogger({
-  levels: winston.config.syslog.levels,
-  format: winston.format.combine(
-    winston.format.errors({ stack: true }),
-    winston.format.timestamp(),
-    winston.format.json(),
+global.logger = Winston.createLogger({
+  levels: Winston.config.syslog.levels,
+  format: Winston.format.combine(
+    Winston.format.errors({ stack: true }),
+    Winston.format.timestamp(),
+    Winston.format.json(),
   ),
   transports: [
-    new WinstonFileRotator({
+    new WinstonDailyRotateFile({
       dirname: 'logs',
       filename: '%DATE%.log',
       datePattern: 'YYYY-MM-DD-HH',
@@ -17,19 +17,19 @@ global.logger = winston.createLogger({
       maxSize: '20m',
       maxFiles: '14d'
     }),
-    new winston.transports.Console({
+    new Winston.transports.Console({
       level: 'debug',
       stderrLevels: ['error', 'crit', 'alert', 'emerg'],
       consoleWarnLevels: ['warn', 'warning'],
       handleExceptions: true,
-      format: winston.format.combine(
-        winston.format.errors({ stack: true }),
-        winston.format.timestamp(),
-        winston.format.simple(),
-        winston.format.printf(({
+      format: Winston.format.combine(
+        Winston.format.errors({ stack: true }),
+        Winston.format.timestamp(),
+        Winston.format.simple(),
+        Winston.format.printf(({
           message, level, timestamp, service, stack,
         }) => {
-          const { colorize } = winston.format.colorize();
+          const { colorize } = Winston.format.colorize();
           const output = `[${timestamp}] ${colorize(level, `${level}`)} ${message}`;
           if (stack) return output.concat('\n', stack);
           return output;
@@ -41,5 +41,5 @@ global.logger = winston.createLogger({
 
 declare global {
   // eslint-disable-next-line no-var
-  var logger: Pick<winston.Logger, 'emerg' | 'alert' | 'crit' | 'error' | 'warning' | 'notice' | 'info' | 'debug'>;
+  var logger: Pick<Winston.Logger, 'emerg' | 'alert' | 'crit' | 'error' | 'warning' | 'notice' | 'info' | 'debug'>;
 }
