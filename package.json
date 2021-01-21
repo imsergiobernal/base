@@ -46,7 +46,7 @@
     "rxjs": "^6.6.3",
     "sequelize": "^6.3.5",
     "shortid": "^2.2.16",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "status-code-enum": "^1.0.0",
     "type-fest": "^0.18.0",
     "typed-rest-client": "^1.7.3",
